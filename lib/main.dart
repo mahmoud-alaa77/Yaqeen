@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islamic_app/core/theming/app_theme.dart';
+import 'package:islamic_app/features/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: const [
         Locale('ar'),
       ],
-      home: const Scaffold(body: Column()),
+      home: const SplashScreen(),
     );
   }
 }
