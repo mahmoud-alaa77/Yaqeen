@@ -25,15 +25,25 @@ class AppTextStyles {
       fontSize: 24.sp,
       fontWeight: FontWeight.w500,
       color: AppColors.primaryColor);
-
+  static TextStyle font20RedW200 = TextStyle(
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w200,
+      color: AppColors.primaryColor);
   static TextStyle font20W500 = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.w500,
   );
-
+ static TextStyle font24W500 = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w500,
+  );
   static TextStyle font18Bold = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeight.w700,
+  );
+    static TextStyle font18W200 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w200,
   );
   static TextStyle font18W900 = TextStyle(
     fontSize: 18.sp,
