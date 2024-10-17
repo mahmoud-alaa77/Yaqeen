@@ -5,7 +5,7 @@ import 'package:islamic_app/features/splash/splash_screen.dart';
 
 class AppRouting {
   Route? genrateRoute(RouteSettings settings) {
-    switch (settings.name) {
+    switch (settings.arguments) {
       case Routes.splashScreen:
         return MaterialPageRoute(builder: (context) => const SplashScreen());
 

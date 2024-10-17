@@ -1,7 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:islamic_app/core/helpers/constants.dart';
-import 'package:islamic_app/core/routing/routes.dart';
 import 'package:islamic_app/features/home/ui/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -20,7 +19,6 @@ class SplashScreen extends StatelessWidget {
         animationDuration: const Duration(milliseconds: 1500),
         splashTransition: SplashTransition.scaleTransition,
         nextScreen: const HomeScreen(),
-        nextRoute: Routes.homeScreen,
       ),
     );
   }
