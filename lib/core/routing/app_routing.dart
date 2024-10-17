@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/core/routing/routes.dart';
-import 'package:islamic_app/features/home/ui/home_screen.dart';
+import 'package:islamic_app/features/home/ui/main_screen.dart';
 import 'package:islamic_app/features/splash/splash_screen.dart';
 
 class AppRouting {
@@ -9,8 +9,8 @@ class AppRouting {
       case Routes.splashScreen:
         return MaterialPageRoute(builder: (context) => const SplashScreen());
 
-      case Routes.homeScreen:
-        return MaterialPageRoute(builder: (context) => const HomeScreen());
+      case Routes.mainScreen:
+        return MaterialPageRoute(builder: (context) => const MainScreen());
       default:
         return null;
     }
