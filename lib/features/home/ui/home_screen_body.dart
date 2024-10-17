@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islamic_app/core/helpers/constants.dart';
 import 'package:islamic_app/core/helpers/spacing.dart';
 import 'package:islamic_app/core/theming/app_text_styles.dart';
-import 'package:islamic_app/features/home/ui/widgets/category_card.dart';
 import 'package:islamic_app/features/home/ui/widgets/home_app_bar.dart';
 import 'package:islamic_app/features/home/ui/widgets/khatma_section.dart';
 import 'package:islamic_app/features/home/ui/widgets/our_services_section.dart';
 import 'package:islamic_app/features/home/ui/widgets/today_message.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeScreenBody extends StatelessWidget {
+  const HomeScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
+    return SingleChildScrollView(
           child: Column(
             children: [
               const HomeAppBar(),
@@ -55,8 +51,6 @@ class HomeScreen extends StatelessWidget {
               const TodayMessage(),
             ],
           ),
-        ),
-      ),
-    );
+        );
   }
 }

@@ -2,7 +2,8 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:islamic_app/core/helpers/constants.dart';
 import 'package:islamic_app/core/routing/routes.dart';
-import 'package:islamic_app/features/home/ui/home_screen.dart';
+import 'package:islamic_app/features/home/ui/home_screen_body.dart';
+import 'package:islamic_app/features/home/ui/main_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -19,8 +20,8 @@ class SplashScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         animationDuration: const Duration(milliseconds: 1500),
         splashTransition: SplashTransition.scaleTransition,
-        nextScreen: const HomeScreen(),
-        nextRoute: Routes.homeScreen,
+        nextScreen: const MainScreen(),
+        nextRoute: Routes.mainScreen,
       ),
     );
   }
