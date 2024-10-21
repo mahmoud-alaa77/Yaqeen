@@ -33,7 +33,10 @@ class HomeAppBar extends StatelessWidget {
                 "assets/images/app_bar_background.jpg",
                 fit: BoxFit.cover,
                 colorBlendMode: BlendMode.colorBurn,
-                color: Theme.of(context).scaffoldBackgroundColor,
+                color: Theme.of(context).brightness ==
+                        Brightness.dark
+                    ? Colors.black.withOpacity(.5)
+                    : AppColors.beigeColor.withOpacity(.4),
                 opacity: const AlwaysStoppedAnimation(.5),
               )),
           Padding(
