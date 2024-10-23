@@ -44,7 +44,7 @@ class CustomAppBar extends StatelessWidget {
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.black.withOpacity(.5)
                     : AppColors.beigeColor.withOpacity(.4),
-                opacity: const AlwaysStoppedAnimation(.5),
+                opacity: const AlwaysStoppedAnimation(.4),
               )),
           Padding(
             padding: EdgeInsetsDirectional.symmetric(horizontal: 16.w),
