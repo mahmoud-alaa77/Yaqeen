@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/theming/app_colors.dart';
 import 'package:islamic_app/features/alarm/ui/alarm_screen_body.dart';
 import 'package:islamic_app/features/home/ui/home_screen_body.dart';
+import 'package:islamic_app/features/qibla/ui/qibla_screen_body.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -17,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _bodies = [
     const HomeScreenBody(),
-    const HomeScreenBody(),
+    const QiblaScreenBody(),
     const HomeScreenBody(),
     const AlarmScreenBody(),
     const HomeScreenBody(),
