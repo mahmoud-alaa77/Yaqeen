@@ -4,6 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/routing/app_routing.dart';
 import 'package:islamic_app/core/routing/routes.dart';
 import 'package:islamic_app/core/theming/app_theme.dart';
+import 'package:islamic_app/features/home/ui/home_screen_body.dart';
+import 'package:islamic_app/features/home/ui/main_screen.dart';
+import 'package:islamic_app/features/home/ui/widgets/home_app_bar.dart';
 import 'package:islamic_app/features/splash/splash_screen.dart';
 
 class YaqeenApp extends StatelessWidget {
@@ -29,9 +32,9 @@ class YaqeenApp extends StatelessWidget {
         supportedLocales: const [
           Locale('ar'),
         ],
-        initialRoute: Routes.splashScreen,
+        initialRoute: Routes.mainScreen,
         onGenerateRoute: appRouter.genrateRoute,
-        home: const SplashScreen(),
+        home: const MainScreen(),
       ),
     );
   }
