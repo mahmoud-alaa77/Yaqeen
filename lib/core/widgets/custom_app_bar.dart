@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:islamic_app/core/helpers/extentions.dart';
 import 'package:islamic_app/core/helpers/spacing.dart';
 import 'package:islamic_app/core/theming/app_colors.dart';
 import 'package:islamic_app/core/theming/app_text_styles.dart';
@@ -51,8 +52,13 @@ class CustomAppBar extends StatelessWidget {
             child: Row(
               children: [
                 backButton == true
-                    ? const AppIconButton(
-                        color: Colors.transparent, icon: Icons.arrow_back)
+                    ? AppIconButton(
+                        color: Colors.transparent,
+                        icon: Icons.arrow_back,
+                        onTap: () {
+                          context.pop();
+                        },
+                      )
                     : const SizedBox.shrink(),
                 const Spacer(
                   flex: 2,

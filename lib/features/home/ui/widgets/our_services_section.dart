@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:islamic_app/core/helpers/extentions.dart';
+import 'package:islamic_app/core/routing/routes.dart';
 import 'package:islamic_app/features/home/ui/widgets/category_card.dart';
 
 import '../../../../core/helpers/constants.dart';
@@ -18,8 +20,12 @@ class OurServicesSection extends StatelessWidget {
         itemCount: 8,
         itemBuilder: (context, index) {
           return CategoryCard(
-              title: servicesList[index]["title"].toString(),
-              imageUrl: servicesList[index]["image"].toString());
+            title: servicesList[index]["title"].toString(),
+            imageUrl: servicesList[index]["image"].toString(),
+            onTap: () {
+              context.pushNamed(Routes.azkaarScreen);
+            },
+          );
         },
 
         padding:
