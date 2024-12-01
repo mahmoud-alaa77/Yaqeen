@@ -47,9 +47,17 @@ class KhatmaSection extends StatelessWidget {
                 ),
                 verticalSpace(8),
                 GestureDetector(
-                  onTap: () {
-                    print("000000000000000000");
-                    LocalNotificationsService.showBasicNotification();
+                  onTap: () async {
+                    print("object000000000000000000");
+                    //LocalNotificationsService.cancelAllNotifications();
+                    //LocalNotificationsService.showNotificationEveryOneMin();
+                    await LocalNotificationsService().scheduleNotification(
+                      id: 222,
+                      notificationTitle: "تذكير بأذكار الصباح",
+                      notificationBody: "لا تنسَ قراءة أذكار الصباح! 🌞",
+                      hour: 9,
+                      minute: 15, 
+                    );
                   },
                   child: Container(
                     width: 100.w,
