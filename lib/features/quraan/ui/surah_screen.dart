@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/theming/app_colors.dart';
 import 'package:islamic_app/core/theming/app_text_styles.dart';
-import 'package:islamic_app/core/theming/app_theme.dart';
 import 'package:islamic_app/core/widgets/custom_app_bar.dart';
 import 'package:islamic_app/features/quraan/logic/cubit/cubit/surah_cubit.dart';
 
@@ -38,8 +36,7 @@ class _SurahScreenState extends State<SurahScreen> {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.symmetric(
-                          horizontal: 20, vertical: 0),
+                      padding: const EdgeInsetsDirectional.only(bottom: 16,end: 20,start: 20),
                       child: ListView.builder(
                         itemCount: 1,
                         itemBuilder: (context, index) {
