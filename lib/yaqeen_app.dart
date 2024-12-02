@@ -6,6 +6,7 @@ import 'package:islamic_app/core/routing/routes.dart';
 import 'package:islamic_app/core/theming/app_theme.dart';
 import 'package:islamic_app/features/azkaar/ui/azkaar_screen.dart';
 import 'package:islamic_app/features/home/ui/main_screen.dart';
+import 'package:islamic_app/features/quraan/ui/quran_content_screen.dart';
 
 class YaqeenApp extends StatelessWidget {
   final AppRouting appRouter;
@@ -30,9 +31,9 @@ class YaqeenApp extends StatelessWidget {
         supportedLocales: const [
           Locale('ar'),
         ],
-        initialRoute: Routes.mainScreen,
+        initialRoute: Routes.quranContentScreen,
         onGenerateRoute: appRouter.genrateRoute,
-        home: const MainScreen(),
+        home: const QuranContentScreen(),
       ),
     );
   }

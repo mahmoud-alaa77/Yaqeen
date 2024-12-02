@@ -7,6 +7,7 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.customWhiteColor,
     fontFamily: "Jomhuria",
     brightness: Brightness.light,
+    
     // textTheme: TextTheme(
     //   bodyLarge: AppTextStyles.fontBodyLarge,
     //   bodySmall: AppTextStyles.fontBodySmall,

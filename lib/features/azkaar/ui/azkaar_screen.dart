@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islamic_app/core/azkaar_data.dart';
+import 'package:islamic_app/core/data/azkaar_data.dart';
 import 'package:islamic_app/core/helpers/extentions.dart';
 import 'package:islamic_app/core/routing/routes.dart';
 
