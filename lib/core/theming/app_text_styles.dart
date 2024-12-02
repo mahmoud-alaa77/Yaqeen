@@ -3,12 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/theming/app_colors.dart';
 
 class AppTextStyles {
-  
   static TextStyle font20Bold = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.bold,
   );
 
+  static TextStyle quranTextStyle =
+      TextStyle(fontSize: 24.sp, fontFamily: 'Almarai', height: 2);
   static TextStyle font23BeigeBold = TextStyle(
       fontSize: 23.sp,
       fontWeight: FontWeight.bold,
@@ -17,7 +18,7 @@ class AppTextStyles {
       fontSize: 22.sp,
       fontWeight: FontWeight.w500,
       color: AppColors.customWhiteColor);
-        static TextStyle font25WhiteW500 = TextStyle(
+  static TextStyle font25WhiteW500 = TextStyle(
       fontSize: 25.sp,
       fontWeight: FontWeight.w500,
       color: AppColors.customWhiteColor);
@@ -33,15 +34,15 @@ class AppTextStyles {
     fontSize: 20.sp,
     fontWeight: FontWeight.w500,
   );
-   static TextStyle font22W500 = TextStyle(
+  static TextStyle font22W500 = TextStyle(
     fontSize: 22.sp,
     fontWeight: FontWeight.w500,
   );
- static TextStyle font24W500 = TextStyle(
+  static TextStyle font24W500 = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeight.w500,
   );
-   static TextStyle font24W900 = TextStyle(
+  static TextStyle font24W900 = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeight.w900,
   );
@@ -53,10 +54,14 @@ class AppTextStyles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w700,
   );
-    static TextStyle font18W200 = TextStyle(
+  static TextStyle font18W200 = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeight.w200,
   );
+  static TextStyle font18RedW200 = TextStyle(
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w200,
+      color: AppColors.primaryColor);
   static TextStyle font18W900 = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeight.w900,
