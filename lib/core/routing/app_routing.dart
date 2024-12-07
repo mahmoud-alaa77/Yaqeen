@@ -5,6 +5,8 @@ import 'package:islamic_app/core/routing/routes.dart';
 import 'package:islamic_app/features/azkaar/ui/azkaar_screen.dart';
 import 'package:islamic_app/features/azkaar/ui/showing_azkar_screen.dart';
 import 'package:islamic_app/features/home/ui/main_screen.dart';
+import 'package:islamic_app/features/prayer_time/logic/cubit/prayer_time_cubit.dart';
+import 'package:islamic_app/features/prayer_time/ui/prayer_time_screen.dart';
 import 'package:islamic_app/features/quraan/data/models/surah_model.dart';
 import 'package:islamic_app/features/quraan/logic/cubit/cubit/surah_cubit.dart';
 import 'package:islamic_app/features/quraan/ui/quran_content_screen.dart';
@@ -41,6 +43,12 @@ class AppRouting {
                   child: SurahScreen(
                     number: num,
                   ),
+                ));
+      case Routes.prayerTimesScreen:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => getIt<PrayerTimeCubit>()..getPrayerTime("cairo"),
+                  child: const PrayerTimeScreen(),
                 ));
 
       default:

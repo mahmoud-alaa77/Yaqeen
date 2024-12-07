@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/helpers/spacing.dart';
-import 'package:islamic_app/core/notifications/local_notification_service.dart';
 import 'package:islamic_app/core/theming/app_colors.dart';
 import 'package:islamic_app/core/theming/app_text_styles.dart';
 
@@ -48,16 +47,16 @@ class KhatmaSection extends StatelessWidget {
                 verticalSpace(8),
                 GestureDetector(
                   onTap: () async {
-                    print("object000000000000000000");
+                    // print("object000000000000000000");
                     //LocalNotificationsService.cancelAllNotifications();
                     //LocalNotificationsService.showNotificationEveryOneMin();
-                    await LocalNotificationsService().scheduleNotification(
-                      id: 222,
-                      notificationTitle: "تذكير بأذكار الصباح",
-                      notificationBody: "لا تنسَ قراءة أذكار الصباح! 🌞",
-                      hour: 9,
-                      minute: 15, 
-                    );
+                    // await LocalNotificationsService.scheduleNotification(
+                    //   id: 222,
+                    //   notificationTitle: "تذكير بأذكار الصباح",
+                    //   notificationBody: "لا تنسَ قراءة أذكار الصباح! 🌞",
+                    //   hour: 11,
+                    //   minute: 18,
+                    // );
                   },
                   child: Container(
                     width: 100.w,

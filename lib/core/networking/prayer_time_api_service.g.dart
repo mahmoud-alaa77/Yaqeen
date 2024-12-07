@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_services.dart';
+part of 'prayer_time_api_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,13 +8,13 @@ part of 'api_services.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
-class _ApiServices implements ApiServices {
-  _ApiServices(
+class _PrayerTimeApiSevice implements PrayerTimeApiSevice {
+  _PrayerTimeApiSevice(
     this._dio, {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://api.alquran.cloud/v1/';
+    baseUrl ??= 'https://muslimsalat.com';
   }
 
   final Dio _dio;
@@ -24,19 +24,19 @@ class _ApiServices implements ApiServices {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<QuranModel> getAllQuran() async {
+  Future<PlayerTimeModel> getPrayerTime(String cityName) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<QuranModel>(Options(
+    final _options = _setStreamType<PlayerTimeModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          'quran/en.asad',
+          '/${cityName}.json?key=3394e73dfe709e091fcae797c08921b1',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -46,42 +46,9 @@ class _ApiServices implements ApiServices {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late QuranModel _value;
+    late PlayerTimeModel _value;
     try {
-      _value = QuranModel.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<SurahModel> getSurahByNum(String num) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<SurahModel>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          'surah/${num}/ar.asad',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SurahModel _value;
-    try {
-      _value = SurahModel.fromJson(_result.data!);
+      _value = PlayerTimeModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

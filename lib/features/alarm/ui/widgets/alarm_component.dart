@@ -48,7 +48,7 @@ class _AlarmComponentState extends State<AlarmComponent> {
                 setState(() {
                   isOn = val;
                 });
-                  await LocalNotificationsService().scheduleNotification(
+                  await LocalNotificationsService.scheduleNotification(
                 id: 200,
                 notificationTitle: "تذكير بأذكار الصباح",
                 notificationBody: "لا تنسَ قراءة أذكار الصباح! 🌞",
@@ -57,6 +57,7 @@ class _AlarmComponentState extends State<AlarmComponent> {
               );
               },
               activeColor: AppColors.primaryColor,
+              
             ),
           )
         ],

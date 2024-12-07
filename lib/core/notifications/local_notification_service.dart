@@ -64,17 +64,15 @@ class LocalNotificationsService {
     });
   }
 
-  Future<void> scheduleNotification({
+  static Future<void> scheduleNotification({
     required int id,
     required String notificationTitle,
     required String notificationBody,
     required int hour,
     required int minute,
   }) async {
-
     final location = tz.getLocation('Africa/Cairo');
     final tz.TZDateTime now = tz.TZDateTime.now(location);
-    print(now); //متأخر ساعتين
     tz.TZDateTime scheduledTime = tz.TZDateTime(
       location,
       now.year,
@@ -107,6 +105,10 @@ class LocalNotificationsService {
       matchDateTimeComponents: DateTimeComponents.time,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
+  }
+
+  static cancelNotificationById(int id) async {
+    await flutterLocalNotificationsPlugin.cancel(id);
   }
 
   static cancelAllNotifications() async {

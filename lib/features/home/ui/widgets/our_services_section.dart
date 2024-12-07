@@ -23,12 +23,13 @@ class OurServicesSection extends StatelessWidget {
             title: servicesList[index]["title"].toString(),
             imageUrl: servicesList[index]["image"].toString(),
             onTap: () {
-              if(servicesList[index]["title"].toString() == "القران الكريم"){
-                              context.pushNamed(Routes.quranContentScreen);
-
-              }else if(servicesList[index]["title"].toString() == "الاذكار"){
-              context.pushNamed(Routes.azkaarScreen);
-
+              if (servicesList[index]["title"].toString() == "القران الكريم") {
+                context.pushNamed(Routes.quranContentScreen);
+              } else if (servicesList[index]["title"].toString() == "الاذكار") {
+                context.pushNamed(Routes.azkaarScreen);
+              } else if (servicesList[index]["title"].toString() ==
+                  "مواقيت الصلاة") {
+                context.pushNamed(Routes.prayerTimesScreen);
               }
             },
           );

@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:islamic_app/core/networking/api_services.dart';
+import 'package:islamic_app/core/networking/prayer_time_api_service.dart';
+import 'package:islamic_app/features/prayer_time/data/repo/prayer_time_repo.dart';
+import 'package:islamic_app/features/prayer_time/logic/cubit/prayer_time_cubit.dart';
 import 'package:islamic_app/features/quraan/data/repo/quran_repo.dart';
 import 'package:islamic_app/features/quraan/logic/cubit/cubit/surah_cubit.dart';
 
@@ -13,12 +16,19 @@ Future<void> setupGetIt() async {
     () => ApiServices(createAndSetUpDio()),
   );
 
+  getIt.registerLazySingleton<PrayerTimeApiSevice>(
+    () => PrayerTimeApiSevice(createAndSetUpDio()),
+  );
 
 //surah of quran
- getIt.registerLazySingleton<QuranRepo>(() => QuranRepo(getIt()));
+  getIt.registerLazySingleton<QuranRepo>(() => QuranRepo(getIt()));
 
   getIt.registerFactory<SurahCubit>(() => SurahCubit(getIt()));
 
+  //prayerTime
+  getIt.registerLazySingleton<PrayerTimeRepo>(() => PrayerTimeRepo(getIt()));
+
+  getIt.registerFactory<PrayerTimeCubit>(() => PrayerTimeCubit(getIt()));
 }
 
 Dio createAndSetUpDio() {
