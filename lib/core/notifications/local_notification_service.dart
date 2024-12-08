@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:developer';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest_all.dart' as tz;
@@ -38,30 +40,20 @@ class LocalNotificationsService {
         0, "title", "body", notificationDetails);
   }
 
-  static int azkaarNotificationId = 0;
 
   static showNotificationEveryOneMin(
       {required List<Map> notificationTextList}) async {
-    Timer.periodic(const Duration(minutes: 30), (Timer timer) async {
-      if (azkaarNotificationId >= notificationTextList.length) {
-        azkaarNotificationId = 0;
-      }
+    NotificationDetails notificationDetails = const NotificationDetails(
+        android: AndroidNotificationDetails("id4", "channelName4h",
+            priority: Priority.high, importance: Importance.max));
 
-      String currentNotification =
-          notificationTextList[azkaarNotificationId]["content"];
-      NotificationDetails notificationDetails = const NotificationDetails(
-          android: AndroidNotificationDetails("iddd", "channelNamehh",
-              priority: Priority.high, importance: Importance.max));
-
-      await flutterLocalNotificationsPlugin.show(
-        azkaarNotificationId,
-        "",
-        currentNotification,
-        notificationDetails,
-      );
-
-      azkaarNotificationId++;
-    });
+    await flutterLocalNotificationsPlugin.periodicallyShowWithDuration(
+      232,
+      "title",
+      "${TimeOfDay.now().hour} :${TimeOfDay.now().minute}",
+      const Duration(minutes: 1),
+      notificationDetails,
+    );
   }
 
   static Future<void> scheduleNotification({
@@ -113,5 +105,6 @@ class LocalNotificationsService {
 
   static cancelAllNotifications() async {
     await flutterLocalNotificationsPlugin.cancelAll();
+    log("All notifications have been cancelled");
   }
 }

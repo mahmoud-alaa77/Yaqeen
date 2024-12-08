@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/core/helpers/spacing.dart';
-import 'package:islamic_app/core/notifications/local_notification_service.dart';
+
 import 'package:islamic_app/core/widgets/custom_app_bar.dart';
 import 'package:islamic_app/features/alarm/ui/widgets/alarm_component.dart';
 
@@ -20,11 +20,11 @@ class AlarmScreenBody extends StatelessWidget {
                 "يعلمك بأوقات الصلاة ويذكرك بأهم \nالاعمال الصالحة في كل لحظة",
           ),
           verticalSpace(24),
-          const AlarmComponent(
-            icon: "assets/images/icons/time.png",
-            title: "منبه لوقت الاذان",
-          ),
-          verticalSpace(12),
+          // const AlarmComponent(
+          //   icon: "assets/images/icons/time.png",
+          //   title: "منبه لوقت الاذان",
+          // ),
+          // verticalSpace(12),
           const AlarmComponent(
             icon: "assets/images/icons/today_weard.png",
             title: "منبه لتذكيرك بوردك اليومي",
@@ -51,6 +51,8 @@ class AlarmScreenBody extends StatelessWidget {
             //   );
             // },
           ),
+
+          
         ],
       ),
     );

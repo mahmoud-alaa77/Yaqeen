@@ -10,9 +10,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: AnimatedSplashScreen(
-        splash: Theme.of(context).brightness == Brightness.light
-            ? Image.asset("assets/images/app_logo.png")
-            : Image.asset("assets/images/app_logo.png"),
+        splash: Image.asset("assets/images/app_logo.png"),
         splashIconSize: 500,
         duration: 600,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
