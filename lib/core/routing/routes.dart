@@ -6,4 +6,6 @@ class Routes {
   static const String quranContentScreen = "/quran_screen_screen";
   static const String quranContentDetailScreen = "/quran_screen_detail_screen";
   static const String prayerTimesScreen = "/prayer_time_screen";
+    static const String sebhaScreen = "/sebha_screen";
+
 }

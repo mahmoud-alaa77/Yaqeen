@@ -30,6 +30,9 @@ class OurServicesSection extends StatelessWidget {
               } else if (servicesList[index]["title"].toString() ==
                   "مواقيت الصلاة") {
                 context.pushNamed(Routes.prayerTimesScreen);
+              }else if (servicesList[index]["title"].toString() ==
+                  "السبحة") {
+                context.pushNamed(Routes.sebhaScreen);
               }
             },
           );
