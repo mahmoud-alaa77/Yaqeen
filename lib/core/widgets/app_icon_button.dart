@@ -6,8 +6,9 @@ class AppIconButton extends StatelessWidget {
   final void Function()? onTap;
   final Color color;
   final IconData icon;
+  final Color? iconColor;
   const AppIconButton(
-      {super.key, this.onTap, required this.color, required this.icon});
+      {super.key, this.onTap, required this.color, required this.icon,  this.iconColor});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class AppIconButton extends StatelessWidget {
         child: Center(
             child: Icon(
           icon,
-          color: AppColors.primaryColor,
+          color: iconColor ?? AppColors.primaryColor,
           size: 30.r,
         )),
       ),
