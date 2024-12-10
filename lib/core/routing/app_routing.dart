@@ -7,10 +7,10 @@ import 'package:islamic_app/features/azkaar/ui/showing_azkar_screen.dart';
 import 'package:islamic_app/features/home/ui/main_screen.dart';
 import 'package:islamic_app/features/prayer_time/logic/cubit/prayer_time_cubit.dart';
 import 'package:islamic_app/features/prayer_time/ui/prayer_time_screen.dart';
-import 'package:islamic_app/features/quraan/data/models/surah_model.dart';
 import 'package:islamic_app/features/quraan/logic/cubit/cubit/surah_cubit.dart';
 import 'package:islamic_app/features/quraan/ui/quran_content_screen.dart';
 import 'package:islamic_app/features/quraan/ui/surah_screen.dart';
+import 'package:islamic_app/features/sebha/logic/cubit/sebha_cubit.dart';
 import 'package:islamic_app/features/sebha/ui/sebha_screen.dart';
 import 'package:islamic_app/features/splash/splash_screen.dart';
 
@@ -25,7 +25,11 @@ class AppRouting {
       case Routes.azkaarScreen:
         return MaterialPageRoute(builder: (context) => const AzkaarScreen());
       case Routes.sebhaScreen:
-        return MaterialPageRoute(builder: (context) => const SebhaScreen());
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => getIt<SebhaCubit>()..getAllZekrList(),
+                  child: const SebhaScreen(),
+                ));
       case Routes.allZakrScreen:
         final azkaar = settings.arguments as List<Map<String, String>>;
         return MaterialPageRoute(
