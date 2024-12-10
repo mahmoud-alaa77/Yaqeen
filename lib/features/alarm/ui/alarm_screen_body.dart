@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/core/helpers/spacing.dart';
-import 'package:islamic_app/core/notifications/local_notification_service.dart';
 import 'package:islamic_app/core/widgets/custom_app_bar.dart';
 import 'package:islamic_app/features/alarm/ui/widgets/alarm_component.dart';
 

@@ -9,7 +9,7 @@ import '../../../../core/theming/app_text_styles.dart';
 class AlarmComponent extends StatefulWidget {
   final String icon;
   final String title;
-  final void  activateNotificationsFunction;
+  final void activateNotificationsFunction;
 
   const AlarmComponent(
       {super.key,
@@ -23,7 +23,7 @@ class AlarmComponent extends StatefulWidget {
 
 class _AlarmComponentState extends State<AlarmComponent> {
   bool isOn = false;
-
+  TimeOfDay? selectTime = TimeOfDay.now();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -40,24 +40,51 @@ class _AlarmComponentState extends State<AlarmComponent> {
             style: AppTextStyles.font20W500,
           ),
           const Spacer(),
+          GestureDetector(
+            onTap: () async {
+              selectTime = await showTimePicker(
+                context: context,
+                initialTime: TimeOfDay.now(),
+              );
+
+              if (selectTime != null)
+                print({
+                  selectTime!.hour.toString() +
+                      ':' +
+                      selectTime!.minute.toString()
+                });
+            },
+            child: Container(
+              padding: const EdgeInsetsDirectional.symmetric(vertical: 6,horizontal: 6),
+              decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(10.r),
+                  border: Border.all(color: AppColors.primaryColor)),
+            //  width: 100.w,
+              //height: 50.h,
+              child: const Center(
+                child: Text("تحديد الوقت "),
+              ),
+            ),
+          ),
+          horizontalSpace(8),
           Transform.scale(
             scale: .85,
             child: Switch(
               value: isOn,
-              onChanged: (val)async {
+              onChanged: (val) async {
                 setState(() {
                   isOn = val;
                 });
-                  await LocalNotificationsService.scheduleNotification(
-                id: 200,
-                notificationTitle: "تذكير بأذكار الصباح",
-                notificationBody: "لا تنسَ قراءة أذكار الصباح! 🌞",
-                hour: 13,
-                minute:34,
-              );
+                await LocalNotificationsService.scheduleNotification(
+                  id: 125,
+                  notificationTitle: "تذكير بأذكار الصباح",
+                  notificationBody: "لا تنسَ قراءة أذكار الصباح! 🌞",
+                  hour: selectTime?.hour ?? 6,
+                  minute: selectTime?.minute ?? 1 ,
+                );
               },
               activeColor: AppColors.primaryColor,
-              
             ),
           )
         ],
