@@ -1,11 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:islamic_app/core/helpers/local_database_helper.dart';
 import 'package:islamic_app/core/networking/api_services.dart';
 import 'package:islamic_app/core/networking/prayer_time_api_service.dart';
 import 'package:islamic_app/features/prayer_time/data/repo/prayer_time_repo.dart';
 import 'package:islamic_app/features/prayer_time/logic/cubit/prayer_time_cubit.dart';
 import 'package:islamic_app/features/quraan/data/repo/quran_repo.dart';
 import 'package:islamic_app/features/quraan/logic/cubit/cubit/surah_cubit.dart';
+import 'package:islamic_app/features/sebha/data/repo/sebha_repo.dart';
+import 'package:islamic_app/features/sebha/logic/cubit/sebha_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -20,6 +23,12 @@ Future<void> setupGetIt() async {
     () => PrayerTimeApiSevice(createAndSetUpDio()),
   );
 
+  //local database
+
+  getIt.registerFactory<DataBaseHelper>(
+    () => DataBaseHelper(),
+  );
+
 //surah of quran
   getIt.registerLazySingleton<QuranRepo>(() => QuranRepo(getIt()));
 
@@ -29,6 +38,11 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<PrayerTimeRepo>(() => PrayerTimeRepo(getIt()));
 
   getIt.registerFactory<PrayerTimeCubit>(() => PrayerTimeCubit(getIt()));
+
+//prayerTime
+  getIt.registerLazySingleton<SebhaRepo>(() => SebhaRepo(getIt()));
+
+  getIt.registerFactory<SebhaCubit>(() => SebhaCubit(getIt()));
 }
 
 Dio createAndSetUpDio() {

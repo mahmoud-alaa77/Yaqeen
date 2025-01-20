@@ -14,6 +14,9 @@ void main() async {
   LocalNotificationsService.init();
   LocalNotificationsService.showNotificationEveryOneMin(
       notificationTextList: azkarElSapah);
+        
+
+
   await ScreenUtil.ensureScreenSize();
   runApp(YaqeenApp(
     appRouter: AppRouting(),

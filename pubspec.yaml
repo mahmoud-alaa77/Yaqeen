@@ -57,7 +57,7 @@ dependencies:
   #for handle errors 
   dartz: ^0.10.1
    #Flutter plugin for SQLite, a self-contained, high-reliability, embedded, SQL database engine
-  sqflite: ^2.4.0
+  sqflite: ^2.4.1
   # The easiest way to create your animated splash screen.
   animated_splash_screen: ^1.3.0
    # for responsive design. 
